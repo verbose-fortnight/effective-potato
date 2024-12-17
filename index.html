@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <img src="assets/images/books.png" alt="Logo">
+    <h1>Chapters</h1>
+    <button class="language-btn" onclick="toggleLanguage()">EN</button>
+  </header>
+
+  <!-- Story Section (Homepage) -->
+  <div class="story-section" id="homePage">
+    <div class="story-cover"></div>
+    <h2 class="story-title" onclick="showStory()">Zapzo's Journey: The Quest for the Lost Nebula</h2>
+    <div class="story-details">
+      <p>Total Chapters: 10</p>
+      <p class="story-status">Ongoing</p>
+    </div>
+  </div>
+
+  <!-- Story Content (Initially Hidden) -->
+  <div class="story-content" id="storyContent">
+    <div class="chapter">
+      <h2 class="chapter-title">Chapter 1: The Beginning</h2>
+      <p class="chapter-content">This is the first chapter content. You can add more text here.</p>
+    </div>
+    <!-- Add more chapters here -->
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <nav>
+    <a href="#" id="homeNav" class="active" onclick="goHome()">
+      <img src="assets/images/home.png" alt="Home">
+      Home
+    </a>
+    <a href="#" id="search">
+      <img src="assets/images/search.png" alt="Search">
+      Search
+    </a>
+    <a href="#" id="profile">
+      <img src="assets/images/user.png" alt="Profile">
+      Profile
+    </a>
+  </nav>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="js/script.js"></script>
+</body>
+</html>
