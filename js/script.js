@@ -1,32 +1,62 @@
 let currentLanguage = 'en';
 
+// Wait for the content to load and hide the loading screen
+document.addEventListener('DOMContentLoaded', () => {
+  const loadingScreen = document.getElementById('loadingScreen');
+  if (loadingScreen) {
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+    }, 500); // Simulate loading time
+  }
+});
+
 // Function to toggle between home and story content
 function showStory() {
-  document.getElementById('homePage').style.display = "none"; // Hide the homepage section
-  document.getElementById('storyContent').style.display = "block"; // Show the story content
+  const homePage = document.getElementById('homePage');
+  const storyContent = document.getElementById('storyContent');
+
+  if (homePage && storyContent) {
+    homePage.style.display = "none"; // Hide the homepage section
+    storyContent.classList.add('visible'); // Show the story content
+  }
 }
 
 // Function to go back to homepage
 function goHome() {
-  document.getElementById('storyContent').style.display = "none"; // Hide story content
-  document.getElementById('homePage').style.display = "flex"; // Show the homepage section again
+  const homePage = document.getElementById('homePage');
+  const storyContent = document.getElementById('storyContent');
+
+  if (homePage && storyContent) {
+    storyContent.classList.remove('visible'); // Hide story content
+    homePage.style.display = "flex"; // Show the homepage section again
+  }
 }
 
 // Toggle language between English and Indonesian
 function toggleLanguage() {
-  if (currentLanguage === 'en') {
-    document.querySelector('h1').textContent = 'Bab';
-    document.querySelector('.story-title').textContent = 'Perjalanan Zapzo: Pencarian Nebula yang Hilang';
-    document.querySelector('.story-details p').textContent = 'Total Bab: 10';
-    document.querySelector('.story-status').textContent = 'Sedang Berlangsung';
-    currentLanguage = 'id';
-    document.querySelector('.language-btn').textContent = 'ID';
-  } else {
-    document.querySelector('h1').textContent = 'Chapters';
-    document.querySelector('.story-title').textContent = 'Zapzo\'s Journey: The Quest for the Lost Nebula';
-    document.querySelector('.story-details p').textContent = 'Total Chapters: 10';
-    document.querySelector('.story-status').textContent = 'Ongoing';
-    currentLanguage = 'en';
-    document.querySelector('.language-btn').textContent = 'EN';
+  const title = document.querySelector('h1');
+  const storyTitle = document.querySelector('.story-title');
+  const totalChapters = document.querySelector('.story-details p');
+  const storyStatus = document.querySelector('.story-status');
+  const languageBtn = document.querySelector('.language-btn');
+
+  if (title && storyTitle && totalChapters && storyStatus && languageBtn) {
+    if (currentLanguage === 'en') {
+      // Switch to Indonesian
+      title.textContent = 'Bab';
+      storyTitle.textContent = 'Perjalanan Zapzo: Pencarian Nebula yang Hilang';
+      totalChapters.textContent = 'Total Bab: 10';
+      storyStatus.textContent = 'Sedang Berlangsung';
+      languageBtn.textContent = 'ID';
+      currentLanguage = 'id';
+    } else {
+      // Switch back to English
+      title.textContent = 'Chapters';
+      storyTitle.textContent = "Zapzo's Journey: The Quest for the Lost Nebula";
+      totalChapters.textContent = 'Total Chapters: 10';
+      storyStatus.textContent = 'Ongoing';
+      languageBtn.textContent = 'EN';
+      currentLanguage = 'en';
+    }
   }
 }
