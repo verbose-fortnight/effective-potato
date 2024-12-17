@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter</title>
   <!-- Link to the external CSS file -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Telegram Web App Script -->
+  <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+  
+  <script>
+    // Initialize Telegram Web App when ready
+    window.Telegram.WebApp.ready();
+    
+    // Optional: Customize Telegram Web App settings
+    // Example: Set background color
+    window.Telegram.WebApp.setBackgroundColor("#ffffff"); // Set background color to white
+    
+    // Example: Log the initial data (user info, etc.)
+    console.log(window.Telegram.WebApp.initData);
+  </script>
 </head>
 <body>
   <!-- Header Section -->
